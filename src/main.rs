@@ -28,3 +28,25 @@ struct TradingPosition {
       loss:f64,
       quantity: u32,
 }
+
+
+fn main () {
+    let market data = MarketData {
+        prices: vec![100.0, 101.5, 99.0, 102.0, 103.5],
+        timestamps: vec![1,2,3,4,5],
+    };
+
+    let strategy = TradingStrategy {
+
+    }
+
+    let positions = TradingPosition {
+        entry_price: 400.0,
+        exit_price: 600.0,
+        transaction_fee: 0.5,
+        profit: 50.0,
+        loss: 0.0,
+        quantity: 643642.0,
+    }
+
+}
