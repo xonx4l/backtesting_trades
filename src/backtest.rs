@@ -39,4 +39,12 @@ impl BacktestEngine {
 
         metrics
     }
+
+    fn historical_returns(&self) -> Vec<f64> {
+        let mut returns = Vec::new();
+            returns = self.positions.iter().map(|p| p.exit_price - p.entry_price).collect();
+            historical_returns.push(returns);
+    }
+
+    
 }
