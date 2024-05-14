@@ -45,6 +45,13 @@ impl BacktestEngine {
             returns = self.positions.iter().map(|p| p.exit_price - p.entry_price).collect();
             historical_returns.push(returns);
     }
+     fn run(&mut self) {
+        // Run backtest
+        for i in 0..self.data.len() {
+            let position = self.positions.get(i);
+            let data = self.data.get(i);
+        }
+    } 
 
     
 }
