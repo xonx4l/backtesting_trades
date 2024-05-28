@@ -54,7 +54,7 @@ impl BacktestEngine {
         }
     } 
 
-    impl BacktestEngine {
+    impl BacktestEngine2 {
     fn plot_equity_curve(&self, file_path: &str) {
         let mut equity = self.cash;
         let mut equity_curve: Vec<(u64, f64)> = Vec::new();
