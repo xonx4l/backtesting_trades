@@ -1,3 +1,3 @@
-pub fn () position_portfolio {
+pub fn position_portfolio () {
 }
 
