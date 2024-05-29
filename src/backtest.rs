@@ -54,6 +54,15 @@ impl BacktestEngine {
         }
     } 
 
+    pub fn strategy_type() {
+    }
+
+
+    pub fn strategy_buy_short_max_min() {
+    }
+
+    pub fn backtesting_assets() {
+    }
     impl BacktestEngine2 {
     fn plot_equity_curve(&self, file_path: &str) {
         let mut equity = self.cash;
