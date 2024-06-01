@@ -30,7 +30,11 @@ impl Portfolio {
      }
 }
 
+fn buy () {
+}
 
+fn sell () {
+}
 
 
 
