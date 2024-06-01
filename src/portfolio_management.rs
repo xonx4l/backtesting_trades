@@ -18,4 +18,19 @@ struct Portfolio {
     portfolio_value_history: Vec<f64>,
 }
 
+impl Portfolio {
+     fn new (initial_cash: f64) -> Portfolio {
+           Portfolio {
+               cash: initial_cash,
+               positions: HashMap::new(),
+               stop_losses: HashMap::new(),
+               trade_history: Vec::new(),
+               portfolio_value_history: Vec::new(),
+           }
+     }
+}
+
+
+
+
 
