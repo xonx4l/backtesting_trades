@@ -81,4 +81,23 @@ fn sell(&mut self, symbol: &str, price: f64, quantity: u32) -> Result<(), &'stat
     }
 
 
+ fn check_stop_losses(&mut self, current_prices: &HashMap<String, f64>) {
+        let mut symbols_to_sell = Vec::new();
+        for (symbol, stop_loss) in &self.stop_losses {
+            if let Some(current_price) = current_prices.get(symbol) {
+                if *current_price <= *stop_loss {
+                    symbols_to_sell.push(symbol.clone());
+                }
+            }
+        }
+
+        for symbol in symbols_to_sell {
+            if let Some(price) = current_prices.get(&symbol) {
+                if let Some(quantity) = self.positions.get(&symbol) {
+                    self.sell(&symbol, *price, *quantity).unwrap();
+                }
+            }
+        }
+    }
+
 
