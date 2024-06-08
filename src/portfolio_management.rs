@@ -55,8 +55,30 @@ fn buy(&mut self, symbol: String, price: f64, quantity: u32, stop_loss: Option<f
 
 
 
-fn sell () {
-}
+fn sell(&mut self, symbol: &str, price: f64, quantity: u32) -> Result<(), &'static str> {
+        let pos = self.positions.get_mut(symbol);
+        if let Some(pos) = pos {
+            if *pos < quantity {
+                return Err("Not enough shares to sell");
+            }
+            *pos -= quantity;
+            self.cash += price * quantity as f64;
+            if *pos == 0 {
+                self.positions.remove(symbol);
+                self.stop_losses.remove(symbol); // Remove stop-loss if no shares left
+            }
+            self.trade_history.push(Trade {
+                trade_type: "sell".to_string(),
+                symbol: symbol.to_string(),
+                price,
+                quantity,
+                stop_loss: None,
+            });
+            Ok(())
+        } else {
+            Err("Symbol not found in portfolio")
+        }
+    }
 
 
 
