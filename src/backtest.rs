@@ -53,14 +53,6 @@ impl BacktestEngine {
             let data = self.data.get(i);
         }
     } 
-
-    pub fn strategy_type() {
-    }
-
-
-    pub fn strategy_buy_short_max_min() {
-    }
-
     pub fn backtesting_assets() {
     }
     impl BacktestEngine2 {
