@@ -2,11 +2,11 @@ FROM rust:1.67
 
 WORKDIR /btrade
 
-COPY  . .
+COPY . .
 
-RUN install cargo 
-RUN cargo run 
-RUN serde-derive
+RUN cargo build --release
 
-CMD ["cargo","src/main.rs"] 
+CMD ["./target/release/btrade"]
+
+
 
