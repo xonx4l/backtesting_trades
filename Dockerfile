@@ -6,5 +6,7 @@ COPY  . .
 
 RUN install cargo 
 RUN cargo run 
+RUN serde-derive
 
 CMD ["cargo","src/main.rs"] 
+
