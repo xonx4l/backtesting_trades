@@ -2,7 +2,7 @@ FROM rust:1.67
 
 WORKDIR /btrade
 
-COPY  ..
+COPY  . .
 
 RUN install cargo 
 RUN cargo run 
